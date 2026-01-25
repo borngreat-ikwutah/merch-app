@@ -2,8 +2,8 @@
 import { z } from "zod";
 
 const clientSchema = z.object({
-  VITE_API_URL: z.url(),
-  VITE_APP_NAME: z.string().min(1),
+  // VITE_API_URL: z.url(),
+  // VITE_APP_NAME: z.string().min(1),
 });
 
 const serverSchema = z.object({

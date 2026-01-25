@@ -28,6 +28,68 @@
     0px 1px 2px 0px rgba(255, 255, 255, 0);
 }
 
+@layer components {
+  /*  */
+  .btn-primary {
+    @apply bg-primary-900 text-primary-100 rounded-[10px] px-4 py-6 text-[16px] leading-6 gap-1.5 font-semibold;
+  }
+
+  .btn-light {
+    @apply flex items-center gap-2 bg-transparent text-tertiary-400 font-urbanist text-[16px] leading-6 font-semibold border border-[#B3B3B3] !important;
+  }
+
+  /* INPUT */
+  .input {
+    @apply text-[#808080] text-[14px] leading-6 font-urbanist text-ellipsis px-2.5 py-3.5 font-bold bg-white! outline-none shad-no-focus border-[#B3B3B3] !important;
+  }
+
+  .success {
+    @apply bg-primary-900 text-white text-[16px] leading-6 font-semibold !important;
+  }
+
+  .error {
+    @apply bg-red-600! text-primary-100 text-[16px] leading-6 font-semibold !important;
+  }
+
+  .information-toast {
+    @apply bg-tertiary-400! text-primary-100! text-[16px] leading-6 font-semibold !important;
+  }
+
+  .shad-no-focus {
+    @apply outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+
+  /* COMPONENTS */
+  .sidebar {
+    @apply hidden md:flex flex-col w-[155px] px-[60px] gap-8! justify-center items-center mr-17.5 !important;
+  }
+
+  .sidebar-item-active {
+    @apply bg-primary-900 text-primary-100 !important;
+  }
+
+  .sidebar-item {
+    @apply flex items-center w-full px-4 py-3 font-semibold leading-5 text-secondary-100   !important;
+  }
+
+  .sidebar-item:hover {
+    @apply bg-primary-900 text-primary-100 !important;
+  }
+
+  .sidebar-item-div {
+    @apply flex items-start w-full gap-5! self-stretch flex-col !important;
+  }
+
+  /* GLOBAL STATE FOR BUTTONS */
+  .contact-button {
+    @apply items-center justify-center gap-1.5 self-stretch border-2 border-secondary-100 bg-[#4D4D4D] px-[18px] py-5 text-[16px] font-semibold leading-normal shadow-button-shadow hover:bg-[#4D4D4D]! hover:text-white disabled:cursor-not-allowed disabled:border-[#171717] disabled:bg-[#171717] disabled:text-[#696969] !important;
+  }
+
+  .bg-remover {
+    @apply px-4! py-5! text-base shad-no-focus border border-secondary-900;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

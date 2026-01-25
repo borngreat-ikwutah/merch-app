@@ -5,6 +5,8 @@ import { env } from "~/env";
 
 const connectionString = env.DATABASE_URL;
 
+// console.log("Connecting to database at:", connectionString);
+
 // Create the Neon Structure
 const client = neon(connectionString);
 

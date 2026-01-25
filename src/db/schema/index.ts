@@ -4,6 +4,6 @@
 // export * from './users';
 // export * from './products';
 export * from "./categories";
-
+export * from "./auth";
 // Re-export for migrations
 export const schemas = {};
