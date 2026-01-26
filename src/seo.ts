@@ -8,7 +8,7 @@ export const seoConfig = {
       content: "width=device-width, initial-scale=1",
     },
     {
-      title: "RapRelics",
+      title: "MerchWay",
     },
     {
       name: "color-scheme",
@@ -17,21 +17,20 @@ export const seoConfig = {
     {
       name: "description",
       content:
-        "RapRelics - The premier destination for exclusive rap merchandise and collectibles.",
+        "MerchWay - The premier destination for exclusive merchandise and collectibles.",
     },
     {
       name: "keywords",
       content:
-        "rap merchandise, hip hop collectibles, music merch, limited edition, RapRelics",
+        "merchandise, collectibles, exclusive merch, limited edition, MerchWay",
     },
     {
       property: "og:title",
-      content: "RapRelics",
+      content: "MerchWay",
     },
     {
       property: "og:description",
-      content:
-        "Discover exclusive rap merchandise and collectibles at RapRelics",
+      content: "Discover exclusive merchandise and collectibles at MerchWay",
     },
     {
       property: "og:type",
@@ -90,8 +89,8 @@ export interface PageMetaOptions {
 // Utility function to create head metadata for individual pages
 export function createPageMeta(options: PageMetaOptions = {}) {
   const {
-    title = "RapRelics",
-    description = "RapRelics - The premier destination for exclusive rap merchandise and collectibles.",
+    title = "MerchWay",
+    description = "MerchWay - The premier destination for exclusive merchandise and collectibles.",
     ogTitle = title,
     ogDescription = description,
     ogImage,
