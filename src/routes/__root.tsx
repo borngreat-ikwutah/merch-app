@@ -5,6 +5,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import appCss from "../styles/app.css?url";
 import { seoConfig } from "../seo";
 import { Navbar } from "~/components/shared/navbar";
+import { appConfig } from "~/app.config";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -26,6 +27,10 @@ export const Route = createRootRoute({
         href: appCss,
       },
       ...seoConfig.faviconLinks,
+      ...appConfig.preconnect.map((href) => ({
+        rel: "preconnect",
+        href,
+      })),
     ],
   }),
 
@@ -39,7 +44,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <Navbar />
         {children}
         <TanStackDevtools
           config={{

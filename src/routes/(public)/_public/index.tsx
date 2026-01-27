@@ -2,8 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
 import { getHeroSlides } from "~/server/hero";
 import { Hero } from "~/components/home/hero";
+import { Navbar } from "~/components/shared/navbar";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/(public)/_public/")({
   loader: () => getHeroSlides(),
   component: Home,
 });
@@ -11,8 +12,8 @@ export const Route = createFileRoute("/")({
 function Home() {
   const slides = Route.useLoaderData();
   return (
-    <main>
+    <>
       <Hero slides={slides} />
-    </main>
+    </>
   );
 }

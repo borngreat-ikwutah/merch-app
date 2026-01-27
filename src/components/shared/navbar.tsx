@@ -10,7 +10,7 @@ const TopNav = () => {
         className="text-2xl font-bold tracking-tight text-black uppercase flex gap-2 items-center"
       >
         <Image src="/favicon.svg" alt="MerchWay Logo" width={30} height={30} />
-        MERCHWAY
+        <h2 className="max-sm:hidden">MERCHWAY</h2>
       </Link>
 
       <div className="hidden items-center gap-8 sm:flex">
@@ -27,13 +27,13 @@ const TopNav = () => {
           Shop
         </Link>
         <Link
-          to="/"
+          to="/login"
           className="text-sm font-medium text-secondary-700 hover:text-black transition-colors"
         >
           Log in
         </Link>
         <Link
-          to="/"
+          to="/signup"
           className="rounded-md bg-black px-6 py-2.5 text-sm font-medium text-white hover:bg-neutral-800 transition-colors"
         >
           Sign up
@@ -45,8 +45,8 @@ const TopNav = () => {
 
 const BottomNav = () => {
   return (
-    <div className="flex w-full flex-col gap-4 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-[60px] border-b border-subtle-100">
-      <nav className="flex items-center gap-8 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide">
+    <div className="flex w-full flex-col gap-4 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-[60px] border-b border-subtle-100 max-sm:hidden">
+      <nav className="flex items-center gap-8 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide font-manrope">
         <Link
           to="/"
           className="whitespace-nowrap text-base font-medium text-secondary-700 hover:text-black"

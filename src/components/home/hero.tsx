@@ -27,7 +27,7 @@ export const Hero = ({ slides }: HeroProps) => {
     if (!emblaApi) return;
     const intervalId = setInterval(() => {
       emblaApi.scrollNext();
-    }, 6000);
+    }, 5000);
     return () => clearInterval(intervalId);
   }, [emblaApi]);
 
