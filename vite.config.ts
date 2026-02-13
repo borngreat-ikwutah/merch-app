@@ -9,6 +9,9 @@ import { nitro } from "nitro/vite";
 // import { tanstackStartCookies } from "better-auth/tanstack-start";
 
 const config = defineConfig({
+  server: {
+    port: 5173,
+  },
   plugins: [
     devtools(),
     nitro(),

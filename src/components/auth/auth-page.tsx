@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Image } from "@unpic/react";
 import { Mail } from "lucide-react";
 import { Button } from "~/components/ui/button";
+import { authClient } from "~/lib/auth-client";
 
 interface AuthPageProps {
   type: "login" | "signup";
@@ -15,6 +16,14 @@ export const AuthPage = ({ type }: AuthPageProps) => {
     : "Already have an account?";
   const footerLinkText = isLogin ? "Sign up" : "Log in";
   const footerLinkTo = isLogin ? "/signup" : "/login";
+
+  const handleGoogleAuth = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
+  const handleEmailAuth = () => {};
 
   return (
     <div className="flex min-h-screen w-full bg-white">
@@ -56,7 +65,11 @@ export const AuthPage = ({ type }: AuthPageProps) => {
           </div>
 
           <div className="space-y-4">
-            <Button variant="outline" className="w-full gap-3 cursor-pointer">
+            <Button
+              variant="outline"
+              className="w-full gap-3 cursor-pointer"
+              onClick={handleGoogleAuth}
+            >
               <svg className="h-5 w-5" viewBox="0 0 24 24">
                 <path
                   d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -78,18 +91,11 @@ export const AuthPage = ({ type }: AuthPageProps) => {
               Continue with Google
             </Button>
 
-            <Button variant="outline" className="w-full gap-3 cursor-pointer">
-              <svg
-                className="h-5 w-5 text-black"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.74 1.18 0 2.45-1.02 4.15-1.02 1.83.1 3.19.89 3.95 2.06-3.32 1.83-2.68 6.55.77 7.97-.69 1.99-1.68 3.93-3.95 3.22zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-              </svg>
-              Continue with Apple
-            </Button>
-
-            <Button variant="outline" className="w-full gap-3 cursor-pointer">
+            <Button
+              variant="outline"
+              className="w-full gap-3 cursor-pointer"
+              onClick={handleEmailAuth}
+            >
               <Mail className="h-5 w-5 text-gray-600 group-hover:text-black" />
               Continue with email
             </Button>
